@@ -1,3 +1,4 @@
+/* Estilos padrão para telas maiores */
 :root {
     --branco-principal: #FFFFFF;
     --cinza-secundario: #C0C0C0;
@@ -6,39 +7,24 @@
     --fonte-principal: 'Inter';
 }
 
-body{
-    @media screen and (max-width: 768px){
-        
-        
+body {
     background-color: var(--cor-de-fundo);
     color: var(--branco-principal);
     font-family: var(--fonte-principal);
     font-size: 16px;
     font-weight: 400;
-@media screen and(max-width:600px){
-    
-}
 }
 
-}
-
+/* Estilos comuns para todos os tamanhos de tela */
 * {
     margin: 0;
     padding: 0;
 }
 
-.principal {
-    background-image: url("img/Background.png");
-    background-repeat: no-repeat;
-    background-size: contain;
-    align-items: center;
-    text-align: center;
-}
-
 .container {
-    height: 100vh;
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 1fr 1fr;
+    padding: 2em;
 }
 
 .container__botao {
@@ -46,18 +32,9 @@ body{
     border-radius: 12px;
     padding: 1em;
     color: var(--branco-principal);
-    display: block;
     text-decoration: none;
+    display: inline-block;
     margin-bottom: 1em;
-    -webkit-border-radius: 12px;
-    -moz-border-radius: 12px;
-    -ms-border-radius: 12px;
-    -o-border-radius: 12px;
-}
-
-.botao_secundario {
-    background-color: transparent;
-    border: 2px solid var(--branco-principal)
 }
 
 .container__aviso {
@@ -80,6 +57,7 @@ body{
 
 .secundario__imagem {
     width: 80%;
+    max-width: 100%;
 }
 
 .secundario {
@@ -108,14 +86,10 @@ body{
 }
 
 .dispositivos__lista {
-display:flex;
-justify-content: center;
-list-style-type: none;
-margin: 5em 0;
-}
-
-.dispositivos{
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    margin: 5em 0;
 }
 
 .dispositivos__titulo {
@@ -135,7 +109,7 @@ margin: 5em 0;
     margin-top: 1em;
 }
 
-.lista__link a{
+.lista__link a {
     text-decoration: none;
     color: var(--branco-principal);
     margin-left: 1em;
@@ -150,4 +124,40 @@ margin: 5em 0;
 .rodape {
     text-align: center;
     margin: 5em 3em;
+}
+
+/* Estilos para telas menores (exemplo: dispositivos móveis) */
+@media screen and (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr; /* Coluna única em telas menores */
+        padding: 1em;
+    }
+
+    .container__caixa {
+        margin: 0 2em; /* Reduz a margem lateral em telas menores */
+    }
+
+    .secundario {
+        margin: 0 2em; /* Reduz a margem lateral em telas menores */
+    }
+
+    .container__titulo {
+        font-size: 24px; /* Reduz o tamanho da fonte em telas menores */
+    }
+
+    .secundario__imagem {
+        width: 100%; /* Imagem ocupa toda a largura em telas menores */
+    }
+
+    .descricao__titulo {
+        font-size: 36px; /* Reduz o tamanho da fonte em telas menores */
+    }
+
+    .lista__item {
+        font-size: 24px; /* Reduz o tamanho da fonte da lista de dispositivos em telas menores */
+    }
+
+    .rodape {
+        margin: 0 2em; /* Reduz a margem lateral em telas menores */
+    }
 }
